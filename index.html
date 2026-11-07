@@ -23,7 +23,142 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
 <script src="./assets/js/theme-init.js"></script>
-<link rel="stylesheet" href="./assets/css/styles.css">
+<style>
+:root{--bg:#F5F6FB;--surface:#fff;--ink:#10143A;--muted:#4A5170;--line:#DDE1F0;--accent:#2B45F0;--on-accent:#fff;--tint:#E6EAFF;--amber:#8A5300;--amber-bg:#FFF0D1;--ok:#0F6B52;--ok-bg:#DDF4EA;color-scheme:light}
+:root[data-theme=dark]{--bg:#0C1126;--surface:#151B36;--ink:#E9ECFA;--muted:#A9B1D0;--line:#262E52;--accent:#8CA0FF;--on-accent:#0C1126;--tint:#1B2347;--amber:#F6C066;--amber-bg:#2D2412;--ok:#7BE0BC;--ok-bg:#12302A;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 "Instrument Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Bricolage Grotesque","Instrument Sans",system-ui,sans-serif;line-height:1.12;letter-spacing:-.02em;margin:0}
+p{margin:0}img{display:block;max-width:100%}a{color:var(--accent)}
+code,.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;font-size:.86em}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1120px,100% - 48px);margin-inline:auto}
+.skip{position:fixed;left:12px;top:-60px;background:var(--accent);color:var(--on-accent);padding:10px 14px;border-radius:8px;z-index:99}.skip:focus{top:12px}
+header.top{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:66px}
+.brand{font:700 1.15rem "Bricolage Grotesque",sans-serif;color:var(--ink);text-decoration:none}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+nav a{color:var(--muted);text-decoration:none;font-size:.95rem;font-weight:500}nav a:hover{color:var(--ink)}
+.tools{display:flex;gap:10px;align-items:center}
+.icon-btn{width:42px;height:42px;display:grid;place-items:center;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:12px;cursor:pointer}
+.icon-btn:hover{border-color:var(--accent)}#menuBtn{display:none}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:10px 18px;border-radius:12px;border:1px solid var(--accent);background:var(--accent);color:var(--on-accent);font:600 .97rem "Instrument Sans",sans-serif;text-decoration:none;cursor:pointer;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}.btn.ghost:hover{border-color:var(--accent)}
+.btn svg,.icon-btn svg{width:18px;height:18px;flex:none}
+section{padding-block:88px}
+.head{max-width:640px;margin-bottom:36px}.head h2{font-size:clamp(1.9rem,4vw,2.7rem)}.head p{color:var(--muted);margin-top:12px}
+/* hero */
+.hero{padding-block:64px 72px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(240px,.7fr);gap:clamp(32px,6vw,80px);align-items:center}
+.pill{display:inline-flex;align-items:center;gap:10px;padding:6px 14px;border:1px solid var(--line);background:var(--surface);border-radius:999px;font-size:.9rem;font-weight:500}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--ok)}
+.hero h1{font-size:clamp(2.6rem,6.4vw,4.9rem);margin:22px 0 18px;letter-spacing:-.035em}
+.lead{font-size:clamp(1.1rem,1.6vw,1.3rem);color:var(--muted);max-width:34em}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.social{display:flex;gap:10px;margin-top:20px}
+.photo{position:relative;justify-self:end;width:min(100%,340px)}
+.photo::before{content:"";position:absolute;inset:18px -18px -18px 18px;border:2px solid var(--accent);border-radius:30px;opacity:.55}
+.photo img{position:relative;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:30px;background:var(--tint)}
+.trace{margin-top:56px;padding:20px 22px;background:var(--surface);border:1px solid var(--line);border-radius:18px}
+.trace p{color:var(--muted);font-size:.92rem;margin-bottom:14px}
+.trace ol{display:flex;flex-wrap:wrap;align-items:center;gap:8px 6px;list-style:none;margin:0;padding:0}
+.trace li{padding:7px 12px;border:1px solid var(--line);border-radius:9px;font-size:.88rem;font-weight:500;animation:hit .5s both;animation-delay:calc(var(--i)*.45s + .6s)}
+.trace li:not(:last-child)::after{content:"›";margin-left:12px;color:var(--muted)}
+.trace li small{color:var(--muted);font-family:"JetBrains Mono",monospace;font-size:.78rem;margin-left:4px}
+@keyframes hit{0%{background:var(--tint);border-color:var(--accent)}100%{background:transparent}}
+/* about */
+.about{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:48px}
+.about .prose p+p{margin-top:16px}.prose{max-width:38em}
+.focus{padding:24px;border-left:3px solid var(--accent);background:var(--surface);border-radius:0 16px 16px 0;align-self:start}
+.focus h3{font-size:1.1rem;margin-bottom:10px}.focus ul{margin:0;padding-left:18px;color:var(--muted)}.focus li+li{margin-top:6px}
+/* experience */
+.job{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:clamp(22px,4vw,38px)}
+.job-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+.job-head h3{font-size:1.6rem}.job-head p{color:var(--muted)}.when{font-weight:600}
+.tracks{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:24px}
+.track h4{font:600 1.1rem "Bricolage Grotesque",sans-serif;margin:10px 0 12px}
+.track ul{margin:0;padding-left:18px;color:var(--muted);font-size:.98rem}.track li+li{margin-top:8px}
+.track.wip{border-left:2px dashed var(--amber);padding-left:24px}
+.badge{display:inline-block;padding:3px 11px;border-radius:999px;font-size:.82rem;font-weight:600;background:var(--ok-bg);color:var(--ok)}
+.badge.wip{background:var(--amber-bg);color:var(--amber)}.badge.feat{background:var(--accent);color:var(--on-accent)}
+/* projects */
+.case{background:var(--surface);border:1.5px solid var(--accent);border-radius:26px;padding:clamp(22px,4vw,44px);margin-bottom:28px}
+.case h3{font-size:clamp(1.8rem,3.6vw,2.6rem);margin:14px 0 14px}
+.case .intro{color:var(--muted);max-width:44em}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0;padding:0;list-style:none}
+.tags li{padding:4px 12px;border-radius:8px;background:var(--tint);font-size:.88rem;font-weight:500}
+.glance{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:28px 0}
+.glance div{padding:16px 18px;border:1px solid var(--line);border-radius:14px}
+.glance b{display:block;font:700 1.5rem "Bricolage Grotesque",sans-serif}.glance span{color:var(--muted);font-size:.9rem}
+.svc{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:0 0 30px;padding:0;list-style:none}
+.svc li{padding:14px;border:1px solid var(--line);border-radius:14px;font-size:.88rem;color:var(--muted)}
+.svc strong{display:block;color:var(--ink);font-size:.95rem}.svc code{color:var(--accent)}
+.flows{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:30px}
+.flows h4,.cols h4{font:600 1.1rem "Bricolage Grotesque",sans-serif;margin-bottom:10px}
+.flows ol{margin:0;padding-left:20px;color:var(--muted);font-size:.95rem}.flows li+li{margin-top:8px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.cols ul{margin:0;padding-left:18px;color:var(--muted);font-size:.97rem}.cols li+li{margin-top:8px}
+.note{margin-top:26px;padding:16px 18px;background:var(--bg);border-radius:12px;color:var(--muted);font-size:.93rem}.note b{color:var(--ink)}
+.row{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:22px;overflow:hidden}
+.thumb{height:150px;display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap;padding:16px;background:var(--tint);font-size:.85rem;font-weight:600}
+.thumb span{padding:6px 11px;background:var(--surface);border-radius:8px;border:1px solid var(--line)}
+.thumb.wip{background:repeating-linear-gradient(135deg,var(--amber-bg) 0 12px,transparent 12px 24px)}
+.card-body{padding:24px;display:flex;flex-direction:column;gap:12px;flex:1}.card h3{font-size:1.5rem}.card p{color:var(--muted);font-size:.98rem}
+details{border-top:1px solid var(--line);padding-top:12px}summary{cursor:pointer;font-weight:600;color:var(--accent)}
+details ul{color:var(--muted);font-size:.95rem;padding-left:18px;margin:10px 0 0}details li+li{margin-top:6px}
+.card .row{margin-top:auto;padding-top:6px}
+/* skills */
+.skills{margin:0}.skills>div{display:grid;grid-template-columns:240px 1fr;gap:12px 32px;padding:20px 0;border-top:1px solid var(--line);align-items:start}
+.skills dt{display:flex;gap:12px;align-items:center;font:600 1.05rem "Bricolage Grotesque",sans-serif}.skills dt svg{width:22px;height:22px;color:var(--accent);flex:none}
+.skills dd{margin:0}.skills .tags{margin:0}
+/* education + contact */
+.edu{padding:28px;background:var(--surface);border:1px solid var(--line);border-radius:20px;max-width:640px}
+.edu h3{font-size:1.4rem;margin:4px 0}.edu p{color:var(--muted)}.edu .meta{display:flex;gap:22px;margin-top:12px;font-weight:600}.edu .sub{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:.95rem}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:40px;background:var(--surface);border:1px solid var(--line);border-radius:26px;padding:clamp(24px,5vw,52px)}
+.contact h2{font-size:clamp(1.9rem,4vw,2.7rem);margin-bottom:12px}.contact>div>p{color:var(--muted)}
+.contact ul{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:10px}.contact ul a{color:var(--ink);text-decoration:none;display:inline-flex;gap:10px;align-items:center}.contact ul a:hover{color:var(--accent)}.contact ul svg{width:20px;height:20px;color:var(--accent)}
+form{display:grid;gap:14px}label{display:grid;gap:6px;font-weight:600;font-size:.92rem}
+input,textarea{font:inherit;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);width:100%}
+textarea{min-height:130px;resize:vertical}input:focus,textarea:focus{border-color:var(--accent)}
+.hp{position:absolute;left:-9999px}#status{min-height:1.4em;font-size:.93rem;color:var(--muted)}
+footer{padding:28px 0 40px;border-top:1px solid var(--line);color:var(--muted);font-size:.92rem}footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:900px){.hero-grid,.about,.tracks,.cols,.pair,.contact{grid-template-columns:1fr}.photo{justify-self:start;width:min(260px,70%);order:-1;margin:0 18px 18px 0}.svc{grid-template-columns:repeat(2,1fr)}.flows{grid-template-columns:1fr}.skills>div{grid-template-columns:1fr}.track.wip{border-left:0;border-top:2px dashed var(--amber);padding:20px 0 0}}
+@media(max-width:760px){#menuBtn{display:grid}nav{position:absolute;left:0;right:0;top:100%;background:var(--bg);border-bottom:1px solid var(--line);display:none}nav.open{display:block}nav ul{flex-direction:column;gap:0;padding:8px 24px 14px}nav a{display:block;padding:12px 0}.bar{position:relative}.top .btn{display:none}section{padding-block:64px}.glance{grid-template-columns:1fr}}
+@media(max-width:480px){.wrap{width:calc(100% - 32px)}.cta .btn{width:100%;justify-content:center}.svc{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+
+/* v2 polish */
+body{background:var(--bg) radial-gradient(900px 500px at 85% -5%,color-mix(in srgb,var(--accent) 18%,transparent),transparent 70%),radial-gradient(700px 400px at -5% 30%,color-mix(in srgb,var(--accent) 9%,transparent),transparent 70%) no-repeat}
+.hero{position:relative}.hero::before{content:"";position:absolute;inset:0;z-index:-1;background-image:radial-gradient(color-mix(in srgb,var(--ink) 14%,transparent) 1px,transparent 1.2px);background-size:24px 24px;-webkit-mask-image:linear-gradient(#000 55%,transparent);mask-image:linear-gradient(#000 55%,transparent)}
+.hero h1{background:linear-gradient(120deg,var(--ink) 55%,var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
+.btn:not(.ghost){box-shadow:0 8px 22px -8px var(--accent)}
+.photo::before{background:linear-gradient(135deg,var(--tint),transparent);opacity:1;border-color:var(--accent)}
+.photo img{box-shadow:0 30px 60px -25px rgba(16,20,58,.45)}
+.chip{position:absolute;margin:0;padding:8px 14px;background:var(--surface);border:1px solid var(--line);border-radius:12px;font-size:.88rem;font-weight:600;box-shadow:0 14px 30px -12px rgba(16,20,58,.35);display:flex;gap:8px;align-items:center}
+.chip.c1{top:22px;left:-26px}.chip.c2{bottom:34px;left:-34px}
+#experience,#skills{background:color-mix(in srgb,var(--tint) 45%,transparent)}
+.timeline{position:relative;display:grid;gap:22px;padding-left:34px}
+.timeline::before{content:"";position:absolute;left:8px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--accent),var(--line))}
+.timeline .job{position:relative}.timeline .job::before{content:"";position:absolute;left:-35px;top:34px;width:14px;height:14px;border-radius:50%;background:var(--accent);border:3px solid var(--bg)}
+.timeline .job:nth-child(2)::before{background:var(--line)}
+.badge.train{background:var(--tint);color:var(--accent)}
+ul.plain{margin:12px 0 0;padding-left:18px;color:var(--muted);font-size:.98rem}ul.plain li+li{margin-top:7px}
+.job,.card,.skills>div,.svc li,.glance div{transition:transform .2s,box-shadow .2s,border-color .2s}
+.card:hover,.svc li:hover,.glance div:hover{transform:translateY(-4px);box-shadow:0 18px 36px -18px rgba(16,20,58,.35);border-color:var(--accent)}
+.case{background:linear-gradient(160deg,color-mix(in srgb,var(--tint) 70%,var(--surface)),var(--surface) 45%);box-shadow:0 30px 70px -40px var(--accent)}
+.thumb{height:170px;background:linear-gradient(135deg,var(--accent),color-mix(in srgb,var(--accent) 40%,var(--ink)));color:var(--ink)}
+.thumb.wip{background:repeating-linear-gradient(135deg,var(--amber-bg) 0 14px,color-mix(in srgb,var(--amber) 14%,var(--amber-bg)) 14px 28px)}
+.tags li{transition:background .2s,color .2s}.tags li:hover{background:var(--accent);color:var(--on-accent)}
+.skills dt svg{padding:4px;width:30px;height:30px;background:var(--tint);border-radius:9px}
+.edu,.contact{box-shadow:0 24px 60px -40px rgba(16,20,58,.4)}
+.contact{background:linear-gradient(150deg,var(--surface),color-mix(in srgb,var(--tint) 60%,var(--surface)))}
+@media(max-width:900px){.chip.c1{left:auto;right:-10px;top:12px}.chip.c2{left:8px;bottom:22px}}
+@media(max-width:480px){.timeline{padding-left:24px}.timeline .job::before{left:-25px}.timeline::before{left:3px}}
+
+</style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Person","name":"Akshit Thakkar","url":"https://akshitthakkar-portfolio.netlify.app/","image":"https://akshitthakkar-portfolio.netlify.app/assets/img/profile.jpg","jobTitle":"Python Developer Intern","worksFor":{"@type":"Organization","name":"WhiteLotus Corporation"},"email":"mailto:akshitthakkar8@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Ahmedabad","addressRegion":"Gujarat","addressCountry":"IN"},"alumniOf":{"@type":"CollegeOrUniversity","name":"Silver Oak Institute of Technology"},"sameAs":["https://github.com/akshitthakkar","https://www.linkedin.com/in/akshitthakkar1"],"knowsAbout":["Python","FastAPI","REST APIs","Microservices","PostgreSQL","Redis","RabbitMQ","Celery","Docker","LLM applications"]}
 </script>
@@ -52,9 +187,9 @@
     <li><a href="#about">About</a></li><li><a href="#experience">Experience</a></li><li><a href="#projects">Projects</a></li><li><a href="#skills">Skills</a></li><li><a href="#education">Education</a></li><li><a href="#contact">Contact</a></li>
   </ul></nav>
   <div class="tools">
-    <a class="btn" href="./Akshit_Thakkar_Resume.pdf" download><svg aria-hidden="true"><use href="#i-dl"/></svg>Resume</a>
-    <button class="icon-btn" id="themeBtn" type="button" aria-label="Toggle dark theme" aria-pressed="false"><svg aria-hidden="true"><use href="#i-moon"/></svg></button>
-    <button class="icon-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><svg aria-hidden="true"><use href="#i-menu"/></svg></button>
+    <a class="btn" href="./Akshit_Thakkar_Resume.pdf" download><svg aria-hidden="true" width="20" height="20"><use href="#i-dl"/></svg>Resume</a>
+    <button class="icon-btn" id="themeBtn" type="button" aria-label="Toggle dark theme" aria-pressed="false"><svg aria-hidden="true" width="20" height="20"><use href="#i-moon"/></svg></button>
+    <button class="icon-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><svg aria-hidden="true" width="20" height="20"><use href="#i-menu"/></svg></button>
   </div>
 </div></header>
 
@@ -67,12 +202,12 @@
       <p class="lead">Python Developer building backend systems, AI-powered applications and real-world software solutions.</p>
       <div class="cta">
         <a class="btn" href="#projects">View My Projects</a>
-        <a class="btn ghost" href="./Akshit_Thakkar_Resume.pdf" download><svg aria-hidden="true"><use href="#i-dl"/></svg>Download Resume</a>
+        <a class="btn ghost" href="./Akshit_Thakkar_Resume.pdf" download><svg aria-hidden="true" width="20" height="20"><use href="#i-dl"/></svg>Download Resume</a>
         <a class="btn ghost" href="#contact">Contact Me</a>
       </div>
       <div class="social">
-        <a class="icon-btn" href="https://github.com/akshitthakkar" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile (opens in new tab)"><svg aria-hidden="true"><use href="#i-gh"/></svg></a>
-        <a class="icon-btn" href="https://www.linkedin.com/in/akshitthakkar1" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile (opens in new tab)"><svg aria-hidden="true"><use href="#i-in"/></svg></a>
+        <a class="icon-btn" href="https://github.com/akshitthakkar" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile (opens in new tab)"><svg aria-hidden="true" width="20" height="20"><use href="#i-gh"/></svg></a>
+        <a class="icon-btn" href="https://www.linkedin.com/in/akshitthakkar1" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile (opens in new tab)"><svg aria-hidden="true" width="20" height="20"><use href="#i-in"/></svg></a>
       </div>
     </div>
     <div class="photo"><picture><source srcset="./assets/img/profile.webp" type="image/webp"><img src="./assets/img/profile.jpg" width="440" height="550" alt="Portrait of Akshit Thakkar smiling in a maroon shirt"></picture><p class="chip c1">Python · FastAPI</p><p class="chip c2"><span class="dot" aria-hidden="true"></span>WhiteLotus Corporation</p></div>
@@ -106,8 +241,8 @@
     </div>
   </article>
   <article class="job">
-    <div class="job-head"><div><h3>Python Fullstack Developer Intern</h3><p>Qspiders (A Software Training Institute), Ahmedabad</p></div><p class="when">From December 2025</p></div>
-    <div style="margin-top:20px"><span class="badge train">Training program</span>
+    <div class="job-head"><div><h3>Python Fullstack Developer Intern</h3><p>Qspiders (A Software Training Institute), Ahmedabad</p></div><p class="when">December 2025 – June 2026</p></div>
+    <div style="margin-top:20px"><span class="badge train">Training program (completed)</span>
       <ul class="plain"><li>Python Full Stack training covering frontend and backend fundamentals.</li><li>Hands-on practice with Python core concepts: OOP, data types, loops and functions.</li><li>Built structured, responsive web pages with HTML, CSS and JavaScript.</li><li>Learned how web applications flow and how frontend and backend connect.</li></ul></div>
   </article>
 </div>
@@ -140,7 +275,7 @@
       <div><h4>Quality</h4><ul><li>Unit and API tests per service, including property-based tests for the PDF chunker.</li><li>Vector search is scoped to the owning user.</li><li>Configuration such as the JWT secret and Gemini API key comes from environment variables (.env).</li></ul></div>
     </div>
     <p class="note"><b>Scope.</b> Docker Compose runs PostgreSQL, Redis and RabbitMQ; the services run locally as Python processes. The FAISS index is local, and there is no hosted demo. The README explains how to run everything.</p>
-    <div class="row"><a class="btn" href="https://github.com/akshitthakkar/Ai-Document-Analysis" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-gh"/></svg>View on GitHub</a></div>
+    <div class="row"><a class="btn" href="https://github.com/akshitthakkar/Ai-Document-Analysis" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" width="20" height="20"><use href="#i-gh"/></svg>View on GitHub</a></div>
   </article>
 
   <div class="pair">
@@ -154,20 +289,20 @@
         <p>A Python food-ordering application: log in, pick items from a menu, build a cart and get the bill calculated automatically.</p>
         <ul class="tags"><li>Python</li><li>SQL</li><li>SQLite</li><li>OOP</li></ul>
         <details><summary>View details</summary><ul><li>User signup and login, with credentials stored in SQLite.</li><li>Menu management and numbered item selection.</li><li>Cart and automatic bill calculation.</li><li>Applied classes and objects, loops, dictionaries and database handling.</li></ul></details>
-        <div class="row"><a class="btn ghost" href="https://github.com/akshitthakkar/Dominos-Food-Ordering-System" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-gh"/></svg>GitHub</a></div></div></article>
+        <div class="row"><a class="btn ghost" href="https://github.com/akshitthakkar/Dominos-Food-Ordering-System" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" width="20" height="20"><use href="#i-gh"/></svg>GitHub</a></div></div></article>
   </div>
 </div></section>
 
 <section id="skills"><div class="wrap">
   <div class="head"><h2>Technical skills</h2><p>Drawn from my resume and the code in my repositories.</p></div>
   <dl class="skills">
-    <div><dt><svg aria-hidden="true"><use href="#i-code"/></svg>Languages</dt><dd><ul class="tags"><li>Python</li><li>SQL</li><li>JavaScript</li></ul></dd></div>
-    <div><dt><svg aria-hidden="true"><use href="#i-box"/></svg>Backend development</dt><dd><ul class="tags"><li>FastAPI</li><li>REST APIs</li><li>Microservices architecture</li><li>JWT authentication</li><li>Pydantic</li><li>pytest</li></ul></dd></div>
-    <div><dt><svg aria-hidden="true"><use href="#i-db"/></svg>Databases</dt><dd><ul class="tags"><li>PostgreSQL</li><li>SQLite</li><li>SQLAlchemy</li><li>Alembic</li></ul></dd></div>
-    <div><dt><svg aria-hidden="true"><use href="#i-q"/></svg>Messaging and background jobs</dt><dd><ul class="tags"><li>Redis</li><li>RabbitMQ</li><li>Celery</li></ul></dd></div>
-    <div><dt><svg aria-hidden="true"><use href="#i-ai"/></svg>AI application development</dt><dd><ul class="tags"><li>LLM-based applications</li><li>Document search and chat (RAG)</li><li>FAISS vector search</li><li>Gemini API</li></ul></dd></div>
-    <div><dt><svg aria-hidden="true"><use href="#i-web"/></svg>Frontend</dt><dd><ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul></dd></div>
-    <div><dt><svg aria-hidden="true"><use href="#i-code"/></svg>Tools and DevOps</dt><dd><ul class="tags"><li>Git</li><li>GitHub</li><li>Docker</li><li>Docker Compose</li><li>VS Code</li></ul></dd></div>
+    <div><dt><svg aria-hidden="true" width="20" height="20"><use href="#i-code"/></svg>Languages</dt><dd><ul class="tags"><li>Python</li><li>SQL</li><li>JavaScript</li></ul></dd></div>
+    <div><dt><svg aria-hidden="true" width="20" height="20"><use href="#i-box"/></svg>Backend development</dt><dd><ul class="tags"><li>FastAPI</li><li>REST APIs</li><li>Microservices architecture</li><li>JWT authentication</li><li>Pydantic</li><li>pytest</li></ul></dd></div>
+    <div><dt><svg aria-hidden="true" width="20" height="20"><use href="#i-db"/></svg>Databases</dt><dd><ul class="tags"><li>PostgreSQL</li><li>SQLite</li><li>SQLAlchemy</li><li>Alembic</li></ul></dd></div>
+    <div><dt><svg aria-hidden="true" width="20" height="20"><use href="#i-q"/></svg>Messaging and background jobs</dt><dd><ul class="tags"><li>Redis</li><li>RabbitMQ</li><li>Celery</li></ul></dd></div>
+    <div><dt><svg aria-hidden="true" width="20" height="20"><use href="#i-ai"/></svg>AI application development</dt><dd><ul class="tags"><li>LLM-based applications</li><li>Document search and chat (RAG)</li><li>FAISS vector search</li><li>Gemini API</li></ul></dd></div>
+    <div><dt><svg aria-hidden="true" width="20" height="20"><use href="#i-web"/></svg>Frontend</dt><dd><ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul></dd></div>
+    <div><dt><svg aria-hidden="true" width="20" height="20"><use href="#i-code"/></svg>Tools and DevOps</dt><dd><ul class="tags"><li>Git</li><li>GitHub</li><li>Docker</li><li>Docker Compose</li><li>VS Code</li></ul></dd></div>
   </dl>
 </div></section>
 
@@ -181,10 +316,10 @@
 <section id="contact"><div class="wrap"><div class="contact">
   <div><h2>Let’s talk</h2><p>Hiring for a Python backend, FastAPI or AI application role, or want to discuss a project? Send me a message.</p>
     <ul>
-      <li><a href="mailto:akshitthakkar8@gmail.com"><svg aria-hidden="true"><use href="#i-mail"/></svg>akshitthakkar8@gmail.com</a></li>
-      <li><a href="https://www.linkedin.com/in/akshitthakkar1" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-in"/></svg>linkedin.com/in/akshitthakkar1</a></li>
-      <li><a href="https://github.com/akshitthakkar" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-gh"/></svg>github.com/akshitthakkar</a></li>
-      <li><span style="display:inline-flex;gap:10px;align-items:center"><svg aria-hidden="true" style="color:var(--accent)"><use href="#i-pin"/></svg>Ahmedabad, Gujarat, India</span></li>
+      <li><a href="mailto:akshitthakkar8@gmail.com"><svg aria-hidden="true" width="20" height="20"><use href="#i-mail"/></svg>akshitthakkar8@gmail.com</a></li>
+      <li><a href="https://www.linkedin.com/in/akshitthakkar1" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" width="20" height="20"><use href="#i-in"/></svg>linkedin.com/in/akshitthakkar1</a></li>
+      <li><a href="https://github.com/akshitthakkar" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" width="20" height="20"><use href="#i-gh"/></svg>github.com/akshitthakkar</a></li>
+      <li><span style="display:inline-flex;gap:10px;align-items:center"><svg aria-hidden="true" width="20" height="20" style="color:var(--accent)"><use href="#i-pin"/></svg>Ahmedabad, Gujarat, India</span></li>
     </ul></div>
   <form id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
     <input type="hidden" name="form-name" value="contact">
