@@ -1,804 +1,203 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="dark">
-  <meta name="theme-color" content="#090d16">
-
-  <title>Akshit Thakkar | Python Backend Developer</title>
-  <meta name="description" content="Akshit Thakkar is a Computer Engineering graduate from Ahmedabad focused on Python backend development with FastAPI, PostgreSQL, Redis, RabbitMQ, Celery and Docker.">
-  <meta name="author" content="Akshit Thakkar">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://akshitthakkar-portfolio.netlify.app/">
-
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Akshit Thakkar — Portfolio">
-  <meta property="og:title" content="Akshit Thakkar | Python Backend Developer">
-  <meta property="og:description" content="Python backend developer building containerised APIs with FastAPI, PostgreSQL, Redis and RabbitMQ.">
-  <meta property="og:url" content="https://akshitthakkar-portfolio.netlify.app/">
-  <meta property="og:image" content="https://akshitthakkar-portfolio.netlify.app/Profile_Photo.jpeg">
-  <meta property="og:image:alt" content="Portrait of Akshit Thakkar">
-  <meta property="og:locale" content="en_IN">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Akshit Thakkar | Python Backend Developer">
-  <meta name="twitter:description" content="Computer Engineering graduate focused on Python backend engineering and FastAPI services.">
-  <meta name="twitter:image" content="https://akshitthakkar-portfolio.netlify.app/Profile_Photo.jpeg">
-
-  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet"></noscript>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Akshit Thakkar",
-    "url": "https://akshitthakkar-portfolio.netlify.app/",
-    "image": "https://akshitthakkar-portfolio.netlify.app/Profile_Photo.jpeg",
-    "jobTitle": "Python Backend Developer",
-    "email": "mailto:akshitthakkar8@gmail.com",
-    "telephone": "+91-7046640366",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Ahmedabad",
-      "addressRegion": "Gujarat",
-      "addressCountry": "IN"
-    },
-    "alumniOf": {
-      "@type": "EducationalOrganization",
-      "name": "Silver Oak Institute of Technology"
-    },
-    "sameAs": [
-      "https://github.com/akshitthakkar",
-      "https://linkedin.com/in/akshitthakkar1"
-    ],
-    "knowsAbout": [
-      "Python", "FastAPI", "Microservices Architecture", "JWT Authentication",
-      "Pydantic", "PostgreSQL", "Redis", "RabbitMQ", "Celery", "Docker",
-      "REST APIs", "HTML", "CSS", "JavaScript", "SQL"
-    ]
-  }
-  </script>
-
-  <style>
-    :root {
-      color-scheme: dark;
-      --bg: #090d16;
-      --bg-soft: #0d1421;
-      --panel: #111b2b;
-      --panel-raised: #152238;
-      --line: #26364c;
-      --line-soft: rgba(155, 180, 207, .14);
-      --text: #f1f5fb;
-      --muted: #bdc8d8;
-      --muted-2: #95a5ba;
-      --accent: #8ce7c8;
-      --accent-strong: #54cfa8;
-      --accent-2: #b8a7ff;
-      --warning: #ffd68a;
-      --shadow: 0 24px 70px rgba(0, 0, 0, .28);
-      --radius: 22px;
-      --radius-sm: 14px;
-      --content: 1160px;
-      --nav-height: 76px;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-height) + 20px); }
-    body {
-      margin: 0;
-      min-width: 320px;
-      background:
-        radial-gradient(ellipse at 12% 4%, rgba(84, 207, 168, .10), transparent 32rem),
-        radial-gradient(ellipse at 92% 20%, rgba(184, 167, 255, .08), transparent 34rem),
-        var(--bg);
-      color: var(--text);
-      font-family: "Manrope", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.68;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
-    img { display: block; max-width: 100%; }
-    a { color: var(--accent); text-decoration-thickness: .08em; text-underline-offset: .2em; }
-    a:hover { color: #c0ffe8; }
-    button, input, textarea { font: inherit; }
-    button, a { -webkit-tap-highlight-color: transparent; }
-    :focus-visible { outline: 3px solid var(--accent-2); outline-offset: 4px; border-radius: 5px; }
-    ::selection { background: rgba(140, 231, 200, .25); color: var(--text); }
-
-    .skip-link {
-      position: fixed; z-index: 1000; top: 10px; left: 10px; padding: 10px 14px;
-      transform: translateY(-160%); background: var(--accent); color: #07110e;
-      border-radius: 9px; font-weight: 800;
-    }
-    .skip-link:focus { transform: translateY(0); }
-    .container { width: min(var(--content), calc(100% - 48px)); margin-inline: auto; }
-    .mono, .eyebrow, .section-index, .tag, .nav-brand, .project-kicker, .architecture-label {
-      font-family: "Fira Code", ui-monospace, SFMono-Regular, Menlo, monospace;
-    }
-
-    /* Navigation */
-    .site-header {
-      position: sticky; z-index: 100; top: 0; min-height: var(--nav-height);
-      border-bottom: 1px solid rgba(155, 180, 207, .12);
-      background: rgba(9, 13, 22, .86); backdrop-filter: blur(18px);
-    }
-    .nav-wrap { min-height: var(--nav-height); display: flex; align-items: center; justify-content: space-between; gap: 22px; }
-    .nav-brand { color: var(--text); font-size: 1.08rem; font-weight: 600; letter-spacing: -.06em; text-decoration: none; white-space: nowrap; }
-    .nav-brand span { color: var(--accent); }
-    .nav-links { display: flex; align-items: center; gap: clamp(12px, 2vw, 27px); }
-    .nav-links a { color: var(--muted); font-size: .84rem; font-weight: 700; text-decoration: none; transition: color .2s ease; white-space: nowrap; }
-    .nav-links a:hover, .nav-links a[aria-current="location"] { color: var(--accent); }
-    .nav-links a[aria-current="location"]::after { display: block; height: 2px; margin-top: 3px; background: var(--accent); content: ""; }
-    .menu-toggle {
-      display: none; width: 42px; height: 42px; border: 1px solid var(--line); border-radius: 12px;
-      background: var(--panel); color: var(--text); cursor: pointer;
-    }
-
-    /* Shared section styles */
-    main { overflow: clip; }
-    section { padding-block: 104px; }
-    .section-head { max-width: 760px; margin-bottom: 38px; }
-    .section-index { display: inline-flex; align-items: center; gap: 10px; color: var(--accent); font-size: .76rem; letter-spacing: .08em; text-transform: uppercase; }
-    .section-index::before { width: 24px; height: 1px; background: var(--accent); content: ""; }
-    .section-title { margin: 12px 0 0; font-family: "Syne", sans-serif; font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.08; letter-spacing: -.045em; }
-    .section-lede { max-width: 670px; margin: 15px 0 0; color: var(--muted); }
-    .accent-text { color: var(--accent); }
-    .muted { color: var(--muted); }
-    .small { font-size: .89rem; }
-
-    /* Hero */
-    .hero { min-height: min(780px, calc(100svh - var(--nav-height))); display: grid; align-items: center; padding-block: 72px 82px; }
-    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(260px, .65fr); align-items: center; gap: clamp(40px, 8vw, 104px); }
-    .availability { display: inline-flex; align-items: center; gap: 10px; padding: 7px 12px; border: 1px solid rgba(140, 231, 200, .28); border-radius: 999px; background: rgba(140, 231, 200, .07); color: #c0f7e3; font-size: .78rem; font-weight: 800; }
-    .availability-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 5px rgba(140, 231, 200, .12); }
-    .hero h1 { max-width: 780px; margin: 24px 0 20px; font-family: "Syne", sans-serif; font-size: clamp(2.35rem, 5.5vw, 4.8rem); line-height: 1.04; letter-spacing: -.055em; }
-    .hero-subtitle { max-width: 730px; margin: 0; color: var(--muted); font-size: clamp(1rem, 1.3vw, 1.13rem); line-height: 1.85; }
-    .hero-subtitle strong { color: var(--text); font-weight: 800; }
-    .hero-about { max-width: 740px; margin: 16px 0 0; padding-left: 14px; border-left: 2px solid rgba(140, 231, 200, .45); color: var(--muted-2); font-size: .83rem; line-height: 1.72; }
-    .hero-about strong { color: var(--accent); font-family: "Fira Code", monospace; font-size: .73rem; font-weight: 500; text-transform: uppercase; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
-    .button {
-      display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px;
-      padding: 11px 17px; border: 1px solid transparent; border-radius: 12px;
-      background: var(--accent); color: #07120f; font-size: .91rem; font-weight: 800;
-      text-decoration: none; transition: transform .2s ease, background .2s ease, border-color .2s ease;
-    }
-    .button:hover { transform: translateY(-2px); background: #b3f6df; color: #07120f; }
-    .button-secondary { border-color: var(--line); background: rgba(17, 27, 43, .76); color: var(--text); }
-    .button-secondary:hover { border-color: var(--accent); background: var(--panel-raised); color: var(--text); }
-    .hero-note { display: flex; flex-wrap: wrap; gap: 10px 18px; margin-top: 26px; color: var(--muted-2); font-size: .82rem; }
-    .hero-note span { display: inline-flex; align-items: center; gap: 7px; }
-    .hero-note span::before { width: 4px; height: 4px; border-radius: 50%; background: var(--accent-2); content: ""; }
-    .portrait-wrap { position: relative; width: min(100%, 340px); justify-self: end; }
-    .portrait-frame { position: relative; overflow: hidden; aspect-ratio: 4 / 5; border: 1px solid rgba(140, 231, 200, .34); border-radius: 34px; background: var(--panel); box-shadow: var(--shadow); }
-    .portrait-frame::after { position: absolute; inset: 0; border-radius: inherit; background: linear-gradient(180deg, transparent 58%, rgba(9, 13, 22, .38)); content: ""; pointer-events: none; }
-    .portrait-frame img { width: 100%; height: 100%; object-fit: cover; object-position: center 28%; }
-    .portrait-orbit { position: absolute; z-index: -1; right: -22px; bottom: -22px; width: 75%; height: 75%; border: 1px solid rgba(184, 167, 255, .45); border-radius: 34px; }
-    .portrait-chip { position: absolute; right: -20px; bottom: 28px; z-index: 2; padding: 10px 13px; border: 1px solid var(--line); border-radius: 12px; background: #121d2d; color: var(--text); font-family: "Fira Code", monospace; font-size: .73rem; box-shadow: var(--shadow); }
-
-    /* Featured case study */
-    .featured-section { padding-top: 64px; }
-    .featured-card { overflow: hidden; border: 1px solid rgba(140, 231, 200, .25); border-radius: var(--radius); background: linear-gradient(145deg, rgba(21, 34, 56, .96), rgba(13, 20, 33, .98)); box-shadow: var(--shadow); }
-    .featured-top { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(280px, .95fr); gap: 34px; padding: clamp(24px, 4vw, 42px); }
-    .project-kicker { color: var(--accent); font-size: .74rem; letter-spacing: .06em; text-transform: uppercase; }
-    .project-title { margin: 10px 0 16px; font-family: "Syne", sans-serif; font-size: clamp(1.85rem, 3.6vw, 2.9rem); line-height: 1.08; letter-spacing: -.04em; }
-    .project-intro { color: var(--muted); margin: 0 0 20px; }
-    .project-highlights { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 24px 0 0; }
-    .highlight { padding: 13px 14px; border: 1px solid var(--line-soft); border-radius: 13px; background: rgba(7, 13, 23, .32); }
-    .highlight strong { display: block; margin-bottom: 3px; color: var(--text); font-size: .86rem; }
-    .highlight span { display: block; color: var(--muted-2); font-size: .78rem; line-height: 1.5; }
-    .featured-aside { align-self: stretch; display: flex; flex-direction: column; justify-content: space-between; gap: 20px; padding: 22px; border: 1px solid var(--line-soft); border-radius: 18px; background: rgba(5, 10, 18, .35); }
-    .featured-aside h3 { margin: 0 0 8px; font-size: .98rem; }
-    .featured-aside p { margin: 0; color: var(--muted); font-size: .88rem; }
-    .tag-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
-    .tag { display: inline-flex; padding: 6px 9px; border: 1px solid rgba(140, 231, 200, .20); border-radius: 8px; background: rgba(140, 231, 200, .06); color: #c9f5e5; font-size: .72rem; line-height: 1.3; }
-    .project-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
-    .text-link { display: inline-flex; align-items: center; gap: 7px; color: var(--accent); font-size: .86rem; font-weight: 800; text-decoration: none; }
-    .text-link:hover { text-decoration: underline; }
-    .not-live { color: var(--muted-2); font-size: .78rem; }
-
-    /* Architecture illustration */
-    .architecture { padding: 26px clamp(18px, 4vw, 42px) 30px; border-top: 1px solid var(--line-soft); background: rgba(6, 11, 19, .40); }
-    .architecture-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 10px; margin-bottom: 16px; }
-    .architecture-head h3 { margin: 0; font-size: 1rem; }
-    .architecture-label { color: var(--muted-2); font-size: .7rem; }
-    .diagram-scroll { overflow-x: auto; overscroll-behavior-inline: contain; padding-bottom: 8px; }
-    .architecture svg { display: block; width: 100%; min-width: 820px; height: auto; }
-    .architecture-note { margin: 10px 0 0; color: var(--muted-2); font-size: .76rem; }
-
-    /* Case study explanation */
-    .case-study-body { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; padding: 0 clamp(24px, 4vw, 42px) 36px; }
-    .case-block { padding: 18px 19px; border: 1px solid var(--line-soft); border-radius: 15px; background: rgba(5, 10, 18, .25); }
-    .case-block h3 { margin: 0 0 9px; color: var(--accent); font-family: "Fira Code", monospace; font-size: .78rem; font-weight: 500; letter-spacing: .04em; text-transform: uppercase; }
-    .case-block p, .case-block ul { margin: 0; color: var(--muted); font-size: .87rem; }
-    .case-block ul { padding-left: 18px; }
-    .case-block li + li { margin-top: 7px; }
-    .decision-list { display: grid; gap: 10px; margin-top: 12px; }
-    .decision-list div { color: var(--muted); font-size: .83rem; }
-    .decision-list strong { color: var(--text); }
-
-    /* Skills */
-    .skills-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
-    .skill-card { padding: 22px; border: 1px solid var(--line); border-radius: var(--radius-sm); background: rgba(17, 27, 43, .68); }
-    .skill-card h3 { margin: 0 0 14px; font-size: .98rem; }
-    .skill-card .tag-list { margin-top: 0; }
-    .skill-card .tag { border-color: var(--line); background: rgba(255, 255, 255, .025); color: var(--muted); font-family: "Manrope", sans-serif; font-size: .8rem; }
-
-    /* Other projects */
-    .other-project { display: grid; grid-template-columns: 72px minmax(0, 1fr) auto; align-items: start; gap: 22px; padding: 26px; border: 1px solid var(--line); border-radius: var(--radius); background: rgba(17, 27, 43, .68); }
-    .other-project + .other-project { margin-top: 15px; }
-    .other-project-number { color: var(--accent-2); font-family: "Fira Code", monospace; font-size: .82rem; }
-    .other-project h3 { margin: 0 0 8px; font-family: "Syne", sans-serif; font-size: 1.35rem; line-height: 1.2; }
-    .other-project p { margin: 0; color: var(--muted); font-size: .88rem; }
-    .other-project .tag-list { margin-top: 13px; }
-    .other-case-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 16px; }
-    .other-case-block { padding: 13px 14px; border: 1px solid var(--line-soft); border-radius: 12px; background: rgba(5, 10, 18, .23); }
-    .other-case-block h4 { margin: 0 0 5px; color: var(--accent); font-family: "Fira Code", monospace; font-size: .72rem; font-weight: 500; text-transform: uppercase; }
-    .other-case-block p { color: var(--muted); font-size: .8rem; line-height: 1.6; }
-    .flow-strip { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; margin-top: 8px; }
-    .flow-step { padding: 5px 8px; border: 1px solid var(--line); border-radius: 7px; background: rgba(255, 255, 255, .03); color: var(--text); font-size: .72rem; }
-    .flow-arrow { color: var(--accent); font-size: .8rem; }
-    .other-project-link { padding-top: 3px; white-space: nowrap; }
-
-    /* Training and education */
-    .timeline { position: relative; display: grid; gap: 16px; }
-    .timeline-card { display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: 24px; padding: 24px; border: 1px solid var(--line); border-radius: var(--radius-sm); background: rgba(17, 27, 43, .68); }
-    .timeline-date { color: var(--accent); font-family: "Fira Code", monospace; font-size: .77rem; }
-    .timeline-card h3 { margin: 0; font-size: 1.08rem; }
-    .timeline-org { margin: 4px 0 12px; color: var(--muted-2); font-size: .85rem; }
-    .timeline-card ul { margin: 0; padding-left: 19px; color: var(--muted); font-size: .86rem; }
-    .timeline-card li + li { margin-top: 6px; }
-    .training-label { display: inline-flex; margin-top: 11px; padding: 5px 9px; border: 1px solid rgba(255, 214, 138, .3); border-radius: 8px; color: var(--warning); font-size: .72rem; font-weight: 800; }
-    .education-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px; }
-    .education-card { padding: 24px; border: 1px solid var(--line); border-radius: var(--radius-sm); background: rgba(17, 27, 43, .68); }
-    .education-card .degree { color: var(--accent); font-family: "Fira Code", monospace; font-size: .74rem; }
-    .education-card h3 { margin: 10px 0 5px; font-size: 1.05rem; }
-    .education-card p { margin: 0; color: var(--muted); font-size: .87rem; }
-    .education-meta { display: flex; flex-wrap: wrap; gap: 8px 14px; margin-top: 16px; color: var(--muted-2); font-size: .78rem; }
-
-    /* Contact */
-    .contact-card { display: grid; grid-template-columns: minmax(0, .9fr) minmax(320px, 1.1fr); gap: 34px; padding: clamp(24px, 4vw, 42px); border: 1px solid rgba(140, 231, 200, .24); border-radius: var(--radius); background: linear-gradient(145deg, rgba(21, 34, 56, .96), rgba(13, 20, 33, .98)); box-shadow: var(--shadow); }
-    .contact-copy h2 { margin: 12px 0 12px; font-family: "Syne", sans-serif; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.07; letter-spacing: -.04em; }
-    .contact-copy p { color: var(--muted); }
-    .contact-lines { display: grid; gap: 10px; margin-top: 22px; }
-    .contact-lines a { display: inline-flex; align-items: center; gap: 10px; width: fit-content; color: var(--text); font-size: .88rem; text-decoration: none; }
-    .contact-lines a:hover { color: var(--accent); }
-    .contact-form { display: grid; gap: 13px; }
-    .field { display: grid; gap: 6px; }
-    .field label { color: var(--muted); font-size: .8rem; font-weight: 800; }
-    .field input, .field textarea { width: 100%; border: 1px solid #35475e; border-radius: 11px; background: rgba(7, 12, 21, .62); color: var(--text); padding: 12px 13px; }
-    .field input::placeholder, .field textarea::placeholder { color: #93a2b6; }
-    .field textarea { min-height: 128px; resize: vertical; }
-    .field input:focus, .field textarea:focus { border-color: var(--accent); outline: 2px solid rgba(140, 231, 200, .18); }
-    .form-status { min-height: 24px; margin: 0; color: var(--muted); font-size: .79rem; }
-    .form-status[data-state="error"] { color: #ffb4ad; }
-    .form-status[data-state="success"] { color: var(--accent); }
-    .contact-fallback { margin: 0; color: var(--muted-2); font-size: .76rem; }
-    .contact-fallback a { color: var(--accent); }
-
-    footer { padding: 26px 0 34px; border-top: 1px solid var(--line-soft); color: var(--muted-2); font-size: .77rem; }
-    .footer-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; }
-    .footer-inner p { margin: 0; }
-    .footer-inner a { color: var(--muted); text-decoration: none; }
-
-    /* Reveal: enhanced only when JS is available */
-    .js .reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
-    .js .reveal.is-visible { opacity: 1; transform: translateY(0); }
-
-    @media (max-width: 900px) {
-      .hero-grid { grid-template-columns: minmax(0, 1fr) 250px; gap: 36px; }
-      .featured-top { grid-template-columns: 1fr; }
-      .featured-aside { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .contact-card { grid-template-columns: 1fr; }
-      .other-project { grid-template-columns: 54px minmax(0, 1fr); }
-      .other-project-link { grid-column: 2; }
-    }
-    @media (max-width: 700px) {
-      :root { --nav-height: 66px; }
-      .container { width: min(100% - 34px, var(--content)); }
-      .nav-wrap { position: relative; }
-      .menu-toggle { display: inline-grid; place-items: center; }
-      .nav-links {
-        position: absolute; top: calc(100% - 1px); left: -17px; right: -17px; display: none;
-        align-items: stretch; flex-direction: column; gap: 0; padding: 8px 17px 16px;
-        border-bottom: 1px solid var(--line); background: rgba(9, 13, 22, .98);
-      }
-      .nav-links.is-open { display: flex; }
-      .nav-links a { padding: 11px 4px; border-bottom: 1px solid var(--line-soft); }
-      .nav-links a[aria-current="location"]::after { display: none; }
-      section { padding-block: 78px; }
-      .hero { min-height: auto; padding-block: 62px 70px; }
-      .hero-grid { grid-template-columns: 1fr; }
-      .hero-copy { order: 2; }
-      .portrait-wrap { order: 1; width: min(230px, 62vw); justify-self: start; margin-left: 8px; }
-      .portrait-chip { right: -34px; font-size: .66rem; }
-      .hero h1 { margin-top: 19px; font-size: clamp(2.25rem, 10vw, 3.45rem); }
-      .featured-section { padding-top: 34px; }
-      .project-highlights, .case-study-body, .skills-grid, .education-grid { grid-template-columns: 1fr; }
-      .featured-aside { grid-template-columns: 1fr; }
-      .timeline-card { grid-template-columns: 1fr; gap: 10px; }
-      .other-project { padding: 20px; }
-      .other-case-grid { grid-template-columns: 1fr; }
-      .contact-card { padding: 23px; }
-    }
-    @media (max-width: 390px) {
-      .container { width: calc(100% - 28px); }
-      .hero-actions { display: grid; grid-template-columns: 1fr; }
-      .button { width: 100%; }
-      .project-actions { display: grid; }
-      .other-project { grid-template-columns: 1fr; gap: 8px; }
-      .other-project-link { grid-column: 1; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
-      .js .reveal { opacity: 1; transform: none; }
-    }
-  </style>
-
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@5/dist/email.min.js" defer></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Akshit Thakkar | Python Backend &amp; AI Application Developer</title>
+<meta name="description" content="Akshit Thakkar is a Python developer in Ahmedabad building FastAPI backends, microservices and LLM-powered applications. Python Developer Intern at WhiteLotus Corporation.">
+<meta name="author" content="Akshit Thakkar">
+<meta name="theme-color" content="#2B45F0">
+<link rel="canonical" href="https://akshitthakkar-portfolio.netlify.app/"><!-- TODO: confirm this is your live Netlify URL -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Akshit Thakkar">
+<meta property="og:title" content="Akshit Thakkar | Python Backend &amp; AI Application Developer">
+<meta property="og:description" content="FastAPI microservices, background processing and LLM-powered apps. Python Developer Intern at WhiteLotus Corporation.">
+<meta property="og:url" content="https://akshitthakkar-portfolio.netlify.app/">
+<meta property="og:image" content="https://akshitthakkar-portfolio.netlify.app/assets/img/og-image.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Akshit Thakkar, Python Backend and AI Application Developer">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://akshitthakkar-portfolio.netlify.app/assets/img/og-image.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<script src="/assets/js/theme-init.js"></script>
+<link rel="stylesheet" href="/assets/css/styles.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Akshit Thakkar","url":"https://akshitthakkar-portfolio.netlify.app/","image":"https://akshitthakkar-portfolio.netlify.app/assets/img/profile.jpg","jobTitle":"Python Developer Intern","worksFor":{"@type":"Organization","name":"WhiteLotus Corporation"},"email":"mailto:akshitthakkar8@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Ahmedabad","addressRegion":"Gujarat","addressCountry":"IN"},"alumniOf":{"@type":"CollegeOrUniversity","name":"Silver Oak Institute of Technology"},"sameAs":["https://github.com/akshitthakkar","https://www.linkedin.com/in/akshitthakkar1"],"knowsAbout":["Python","FastAPI","REST APIs","Microservices","PostgreSQL","Redis","RabbitMQ","Celery","Docker","LLM applications"]}
+</script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-gh" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .5a11.5 11.5 0 0 0-3.64 22.4c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></symbol>
+<symbol id="i-in" viewBox="0 0 24 24"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11.5H3V9.75Zm6.5 0h3.83v1.57h.06c.53-1 1.84-2.07 3.78-2.07 4.04 0 4.78 2.66 4.78 6.1v5.9h-4v-5.23c0-1.25-.02-2.85-1.74-2.85-1.74 0-2 1.36-2 2.76v5.32h-4V9.75Z"/></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 6h18v12H3zM3 7l9 6 9-6"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Zm0-8.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></symbol>
+<symbol id="i-dl" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14"/></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></symbol>
+<symbol id="i-code" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m8 8-4 4 4 4m8-8 4 4-4 4m-2-9-4 10"/></symbol>
+<symbol id="i-db" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M4 6c0-1.7 3.6-3 8-3s8 1.3 8 3-3.6 3-8 3-8-1.3-8-3Zm0 0v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></symbol>
+<symbol id="i-q" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 7h10M4 12h16M4 17h10m4-10h2"/></symbol>
+<symbol id="i-ai" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 3v4m0 10v4M3 12h4m10 0h4M7 7l2 2m6 6 2 2m0-10-2 2M9 15l-2 2"/><circle cx="12" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+<symbol id="i-web" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 5h18v14H3zM3 9h18"/></symbol>
+<symbol id="i-box" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Zm0 9 8-4.5M12 12v9M12 12 4 7.5"/></symbol>
+</defs></svg>
+<a class="skip" href="#main">Skip to content</a>
 
-  <header class="site-header">
-    <nav class="container nav-wrap" aria-label="Main navigation">
-      <a class="nav-brand" href="#home" aria-label="Akshit Thakkar home">AT<span>_</span></a>
-      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-controls="navLinks" aria-expanded="false">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-      </button>
-      <div class="nav-links" id="navLinks">
-        <a href="#home">Home</a>
-        <a href="#featured">Featured project</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Training</a>
-        <a href="#education">Education</a>
-        <a href="#contact">Contact</a>
+<header class="top"><div class="wrap bar">
+  <a class="brand" href="#home" aria-label="Akshit Thakkar, home">Akshit Thakkar</a>
+  <nav id="nav" aria-label="Main"><ul>
+    <li><a href="#about">About</a></li><li><a href="#experience">Experience</a></li><li><a href="#projects">Projects</a></li><li><a href="#skills">Skills</a></li><li><a href="#education">Education</a></li><li><a href="#contact">Contact</a></li>
+  </ul></nav>
+  <div class="tools">
+    <a class="btn" href="/Akshit_Thakkar_Resume.pdf" download><svg aria-hidden="true"><use href="#i-dl"/></svg>Resume</a>
+    <button class="icon-btn" id="themeBtn" type="button" aria-label="Toggle dark theme" aria-pressed="false"><svg aria-hidden="true"><use href="#i-moon"/></svg></button>
+    <button class="icon-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><svg aria-hidden="true"><use href="#i-menu"/></svg></button>
+  </div>
+</div></header>
+
+<main id="main">
+<section class="hero" id="home"><div class="wrap">
+  <div class="hero-grid">
+    <div>
+      <p class="pill"><span class="dot" aria-hidden="true"></span>Python Developer Intern at WhiteLotus Corporation</p>
+      <h1>Hi, I’m Akshit Thakkar</h1>
+      <p class="lead">Python Developer building backend systems, AI-powered applications and real-world software solutions.</p>
+      <div class="cta">
+        <a class="btn" href="#projects">View My Projects</a>
+        <a class="btn ghost" href="/Akshit_Thakkar_Resume.pdf" download><svg aria-hidden="true"><use href="#i-dl"/></svg>Download Resume</a>
+        <a class="btn ghost" href="#contact">Contact Me</a>
       </div>
-    </nav>
-  </header>
-
-  <main id="main">
-    <section class="hero" id="home" aria-labelledby="hero-title">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <span class="availability"><span class="availability-dot" aria-hidden="true"></span> Open to fresher / junior opportunities</span>
-          <h1 id="hero-title">Python backend developer building scalable, containerised APIs with <span class="accent-text">FastAPI, PostgreSQL, Redis &amp; RabbitMQ.</span></h1>
-          <p class="hero-subtitle">I design service-oriented backend applications with clear API boundaries, token-based authentication and asynchronous task processing. My featured project brings these ideas together in an AI Document Analysis Platform built with Docker and a document search-and-chat module.</p>
-          <p class="hero-about"><strong>About:</strong> I'm a Computer Engineering graduate from Silver Oak Institute of Technology, Ahmedabad, with a CGPA of 8.84. I focus on Python backend development and designed an AI Document Analysis Platform using FastAPI, microservices, JWT authentication, PostgreSQL, Redis, RabbitMQ, Celery and Docker. Its services communicate over REST; document-processing work is queued for background execution, and a search-and-chat module retrieves relevant content to generate LLM responses. I'm currently undertaking Python Full Stack training at QSpiders, strengthening my Python fundamentals and frontend–backend integration through hands-on practice.</p>
-          <div class="hero-actions" aria-label="Primary actions">
-            <a class="button" href="#featured">View Projects <span aria-hidden="true">↘</span></a>
-            <a class="button button-secondary" href="./Akshit_Thakkar_Resume.pdf" download="Akshit_Thakkar_Resume.pdf">Download Resume <span aria-hidden="true">↓</span></a>
-            <a class="button button-secondary" href="https://github.com/akshitthakkar" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
-          </div>
-          <div class="hero-note" aria-label="Profile details">
-            <span>Computer Engineering</span>
-            <span>Ahmedabad, India</span>
-            <span>Backend-first, full-stack open</span>
-          </div>
-        </div>
-        <div class="portrait-wrap">
-          <div class="portrait-frame">
-            <picture>
-              <source srcset="./Profile_Photo.webp" type="image/webp">
-              <img src="./Profile_Photo.jpeg" alt="Portrait of Akshit Thakkar" width="960" height="1280" loading="lazy" decoding="async">
-            </picture>
-          </div>
-          <div class="portrait-orbit" aria-hidden="true"></div>
-          <div class="portrait-chip" aria-hidden="true">Python · FastAPI · Docker</div>
-        </div>
+      <div class="social">
+        <a class="icon-btn" href="https://github.com/akshitthakkar" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile (opens in new tab)"><svg aria-hidden="true"><use href="#i-gh"/></svg></a>
+        <a class="icon-btn" href="https://www.linkedin.com/in/akshitthakkar1" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile (opens in new tab)"><svg aria-hidden="true"><use href="#i-in"/></svg></a>
       </div>
-    </section>
-
-    <section class="featured-section" id="featured" aria-labelledby="featured-title">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="section-index">01 / Featured project</span>
-          <h2 class="section-title" id="featured-title">An API-first document analysis system.</h2>
-          <p class="section-lede">A microservices-based backend combining authentication, document workflows, caching, task queues and LLM-backed document search/chat.</p>
-        </div>
-
-        <article class="featured-card reveal" aria-labelledby="ai-project-title">
-          <div class="featured-top">
-            <div>
-              <span class="project-kicker">Python · Backend engineering · AI application</span>
-              <h3 class="project-title" id="ai-project-title">AI Document Analysis Platform</h3>
-              <p class="project-intro">The platform brings authenticated document handling and asynchronous processing together with a document search-and-chat experience that retrieves relevant content and generates responses using an LLM.</p>
-              <div class="project-highlights">
-                <div class="highlight"><strong>Service boundaries</strong><span>API gateway, authentication and document handling are separated services.</span></div>
-                <div class="highlight"><strong>Identity</strong><span>JWTs are issued by a dedicated auth service and independently verified by other services.</span></div>
-                <div class="highlight"><strong>Async work</strong><span>Celery and RabbitMQ are used for background task queuing and processing.</span></div>
-                <div class="highlight"><strong>Containerised setup</strong><span>Docker and Docker Compose provide a consistent local environment.</span></div>
-              </div>
-              <div class="tag-list" aria-label="Technology stack">
-                <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">PostgreSQL</span><span class="tag">Redis</span><span class="tag">RabbitMQ</span><span class="tag">Celery</span><span class="tag">Docker</span><span class="tag">JWT</span><span class="tag">Microservices</span><span class="tag">LLM</span>
-              </div>
-              <div class="project-actions">
-                <a class="button" href="https://github.com/akshitthakkar/Ai-Document-Analysis" target="_blank" rel="noopener noreferrer">View GitHub repository ↗</a>
-                <a class="button button-secondary" href="#architecture">View architecture ↓</a>
-                <span class="not-live">Live demo: not deployed yet</span>
-              </div>
-            </div>
-
-            <aside class="featured-aside" aria-label="Project summary">
-              <div>
-                <h3>Problem</h3>
-                <p>Support document upload and processing behind authenticated APIs, while making relevant document content available through search and chat.</p>
-              </div>
-              <div>
-                <h3>My approach</h3>
-                <p>Separated authentication, document handling and the API gateway; connected services through REST and paired storage with cache and queued background work.</p>
-              </div>
-              <div>
-                <h3>What I learned</h3>
-                <p>How service boundaries, independently verified tokens, shared infrastructure and asynchronous processing fit together in a containerised backend.</p>
-              </div>
-            </aside>
-          </div>
-
-          <div class="architecture" id="architecture">
-            <div class="architecture-head">
-              <h3>High-level system architecture</h3>
-              <span class="architecture-label">REQUEST → SERVICES → DATA / QUEUE → WORKERS</span>
-            </div>
-            <div class="diagram-scroll" tabindex="0" aria-label="Scrollable architecture diagram">
-              <svg viewBox="0 0 1040 470" role="img" aria-labelledby="diagram-title diagram-desc" xmlns="http://www.w3.org/2000/svg">
-                <title id="diagram-title">AI Document Analysis Platform architecture</title>
-                <desc id="diagram-desc">A client sends requests to an API Gateway, which routes to Auth Service and Document Service. The services use PostgreSQL and Redis; the document workflow sends background work through RabbitMQ to Celery workers and an LLM-backed document search and chat module.</desc>
-                <defs>
-                  <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 Z" fill="#8ce7c8"/></marker>
-                  <linearGradient id="nodeFill" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#1a2b43"/><stop offset="1" stop-color="#101a2a"/></linearGradient>
-                </defs>
-                <g fill="none" stroke="#8ce7c8" stroke-width="2.2" marker-end="url(#arrow)" opacity=".95">
-                  <path d="M145 220 H205"/>
-                  <path d="M355 220 C380 220 375 110 410 110"/>
-                  <path d="M355 220 C380 220 375 330 410 330"/>
-                  <path d="M560 110 C595 110 595 220 635 220"/>
-                  <path d="M560 330 C600 330 595 110 635 110"/>
-                  <path d="M560 330 C600 330 595 220 635 220"/>
-                  <path d="M560 330 H635"/>
-                  <path d="M780 330 H835"/>
-                  <path d="M910 370 V410"/>
-                </g>
-                <g fill="none" stroke="#b8a7ff" stroke-width="1.7" stroke-dasharray="6 6" opacity=".8">
-                  <path d="M485 150 V185 H710 V185"/>
-                  <path d="M710 260 V295"/>
-                </g>
-                <g font-family="Manrope, sans-serif" text-anchor="middle">
-                  <rect x="18" y="183" width="127" height="74" rx="13" fill="url(#nodeFill)" stroke="#61738d"/>
-                  <text x="81" y="214" fill="#f1f5fb" font-size="15" font-weight="800">Client</text>
-                  <text x="81" y="235" fill="#bdc8d8" font-size="11">HTTP requests</text>
-
-                  <rect x="205" y="183" width="150" height="74" rx="13" fill="url(#nodeFill)" stroke="#8ce7c8" stroke-width="1.6"/>
-                  <text x="280" y="214" fill="#f1f5fb" font-size="15" font-weight="800">API Gateway</text>
-                  <text x="280" y="235" fill="#bdc8d8" font-size="11">REST routing</text>
-
-                  <rect x="410" y="72" width="150" height="76" rx="13" fill="url(#nodeFill)" stroke="#b8a7ff"/>
-                  <text x="485" y="103" fill="#f1f5fb" font-size="14" font-weight="800">Auth Service</text>
-                  <text x="485" y="125" fill="#bdc8d8" font-size="11">JWT issue / verify</text>
-
-                  <rect x="410" y="292" width="150" height="76" rx="13" fill="url(#nodeFill)" stroke="#8ce7c8" stroke-width="1.6"/>
-                  <text x="485" y="323" fill="#f1f5fb" font-size="14" font-weight="800">Document Service</text>
-                  <text x="485" y="345" fill="#bdc8d8" font-size="11">Upload / processing APIs</text>
-
-                  <rect x="635" y="72" width="145" height="76" rx="13" fill="url(#nodeFill)" stroke="#61738d"/>
-                  <text x="707" y="103" fill="#f1f5fb" font-size="14" font-weight="800">PostgreSQL</text>
-                  <text x="707" y="125" fill="#bdc8d8" font-size="11">Persistent data</text>
-
-                  <rect x="635" y="183" width="145" height="76" rx="13" fill="url(#nodeFill)" stroke="#61738d"/>
-                  <text x="707" y="214" fill="#f1f5fb" font-size="14" font-weight="800">Redis</text>
-                  <text x="707" y="236" fill="#bdc8d8" font-size="11">Cache / sessions / limits</text>
-
-                  <rect x="635" y="292" width="145" height="76" rx="13" fill="url(#nodeFill)" stroke="#61738d"/>
-                  <text x="707" y="323" fill="#f1f5fb" font-size="14" font-weight="800">RabbitMQ</text>
-                  <text x="707" y="345" fill="#bdc8d8" font-size="11">Task queue</text>
-
-                  <rect x="835" y="292" width="150" height="76" rx="13" fill="url(#nodeFill)" stroke="#8ce7c8" stroke-width="1.6"/>
-                  <text x="910" y="323" fill="#f1f5fb" font-size="14" font-weight="800">Celery workers</text>
-                  <text x="910" y="345" fill="#bdc8d8" font-size="11">Background processing</text>
-
-                  <rect x="835" y="410" width="150" height="48" rx="12" fill="#211d3b" stroke="#b8a7ff" stroke-width="1.3"/>
-                  <text x="910" y="439" fill="#e4dcff" font-size="13" font-weight="800">LLM search + chat</text>
-                </g>
-                <g font-family="Fira Code, monospace" fill="#b8a7ff" font-size="10">
-                  <text x="595" y="174">cache / session / rate limiting</text>
-                  <text x="790" y="397">queued work</text>
-                </g>
-              </svg>
-            </div>
-            <p class="architecture-note">High-level illustration based on the resume description, not a verified deployment topology. The technical rationales below explain the standard tradeoffs implied by the selected components; confirm the exact service-to-database and worker-to-LLM calls against the repository before presenting them as verified implementation details.</p>
-          </div>
-
-          <div class="case-study-body">
-            <div class="case-block">
-              <h3>Architecture &amp; communication</h3>
-              <p>The API gateway routes requests to the authentication and document-handling services over REST. PostgreSQL is used for storage, Redis for caching, session storage and rate limiting, and RabbitMQ with Celery for background task queuing and processing. The project also includes a document search-and-chat module that retrieves relevant content and generates LLM responses.</p>
-            </div>
-            <div class="case-block">
-              <h3>Key technical decisions</h3>
-              <div class="decision-list">
-                <div><strong>JWT authentication:</strong> services can verify issued tokens independently instead of depending on a central authentication lookup for every request.</div>
-                <div><strong>Redis:</strong> one shared in-memory layer supports the stated caching, session-storage and rate-limiting use cases.</div>
-                <div><strong>Celery + RabbitMQ:</strong> queue document-processing work for workers rather than keeping all processing inside the request path.</div>
-              </div>
-            </div>
-            <div class="case-block">
-              <h3>What I learned</h3>
-              <p>How to divide backend responsibilities across services, apply stateless token verification, use cache and messaging infrastructure, and package a multi-service application consistently with Docker Compose.</p>
-            </div>
-            <div class="case-block">
-              <h3>Evidence still to add</h3>
-              <ul>
-                <li>Public API docs at <code>/docs</code>, once a live API is available.</li>
-                <li>A real screen recording showing upload, processing and search/chat.</li>
-                <li>Repository screenshots and a verified architecture diagram.</li>
-              </ul>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="skills" aria-labelledby="skills-title">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="section-index">02 / Technical skills</span>
-          <h2 class="section-title" id="skills-title">A backend-focused toolkit.</h2>
-          <p class="section-lede">Grouped to make the core Python backend stack easy to scan. Every skill below appears in the supplied resume.</p>
-        </div>
-        <div class="skills-grid">
-          <article class="skill-card reveal"><h3>Languages</h3><div class="tag-list"><span class="tag">Python</span></div></article>
-          <article class="skill-card reveal"><h3>Backend &amp; APIs</h3><div class="tag-list"><span class="tag">FastAPI</span><span class="tag">Microservices Architecture</span><span class="tag">JWT Authentication</span><span class="tag">Pydantic</span><span class="tag">REST APIs</span></div></article>
-          <article class="skill-card reveal"><h3>Databases &amp; Messaging</h3><div class="tag-list"><span class="tag">SQL</span><span class="tag">PostgreSQL</span><span class="tag">Redis</span><span class="tag">RabbitMQ</span><span class="tag">Celery</span></div></article>
-          <article class="skill-card reveal"><h3>DevOps &amp; Tools</h3><div class="tag-list"><span class="tag">Docker</span><span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">VS Code</span></div></article>
-          <article class="skill-card reveal"><h3>Web Frontend</h3><div class="tag-list"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div></article>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects" aria-labelledby="projects-title">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="section-index">03 / Other project</span>
-          <h2 class="section-title" id="projects-title">More hands-on work.</h2>
-          <p class="section-lede">A smaller application project that demonstrates Python fundamentals and a complete user ordering flow.</p>
-        </div>
-        <article class="other-project reveal">
-          <div class="other-project-number">02 /</div>
-          <div>
-            <h3>Dominos Food Ordering System</h3>
-            <p><strong>Problem:</strong> Build a simple Domino’s-style ordering experience with account access, menu selection and bill calculation. <strong>My approach:</strong> Created a Python-based application with signup/login, menu management and responsive pages using HTML, CSS and Tailwind CSS. SQLite stores user credentials; users select menu items by number, add them to a cart and calculate the final bill automatically.</p>
-            <div class="other-case-grid">
-              <div class="other-case-block"><h4>Architecture / user flow</h4><p>The application flow is presented as a simple ordering sequence:</p><div class="flow-strip" id="dominos-flow" aria-label="Signup and login, menu, cart and bill flow"><span class="flow-step">Sign up / Login</span><span class="flow-arrow" aria-hidden="true">→</span><span class="flow-step">Menu</span><span class="flow-arrow" aria-hidden="true">→</span><span class="flow-step">Cart</span><span class="flow-arrow" aria-hidden="true">→</span><span class="flow-step">Bill</span></div></div>
-              <div class="other-case-block"><h4>Key technical decisions</h4><p>Used SQLite for storing user credentials and a straightforward item-selection and cart flow for calculating the final bill. Applied Python OOP, loops, dictionaries and data mapping in the application logic.</p></div>
-              <div class="other-case-block"><h4>What I learned</h4><p>Practised classes and objects, loops, dictionaries, data mapping, file/database handling, and building responsive pages with HTML, CSS and Tailwind CSS.</p></div>
-              <div class="other-case-block"><h4>Evidence</h4><p>Source code is linked below. No public live demo or measured usage/performance result is currently claimed.</p></div>
-            </div>
-            <div class="tag-list" aria-label="Technology stack"><span class="tag">Python</span><span class="tag">SQL / SQLite</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Tailwind CSS</span><span class="tag">OOP</span></div>
-          </div>
-          <div class="other-project-link"><a class="text-link" href="https://github.com/akshitthakkar/Dominos-Food-Ordering-System" target="_blank" rel="noopener noreferrer">GitHub repository ↗</a><div><a class="text-link" href="#dominos-flow">View application flow ↓</a></div><div class="not-live">No live demo published</div></div>
-        </article>
-      </div>
-    </section>
-
-    <section id="experience" aria-labelledby="experience-title">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="section-index">04 / Experience &amp; training</span>
-          <h2 class="section-title" id="experience-title">Building fundamentals through structured training.</h2>
-          <p class="section-lede">Presented as a software training program, not as production engineering employment.</p>
-        </div>
-        <article class="timeline-card reveal">
-          <div>
-            <div class="timeline-date">DEC 2025 — PRESENT</div>
-            <span class="training-label">Training program</span>
-          </div>
-          <div>
-            <h3>Python Fullstack Developer Intern</h3>
-            <p class="timeline-org">QSpiders (A Software Training Institute) · Ahmedabad, Gujarat</p>
-            <ul>
-              <li>Undertaking Python Full Stack training covering frontend and backend fundamentals.</li>
-              <li>Practising Python core concepts, including OOP, data types, loops and functions, through hands-on exercises.</li>
-              <li>Building structured, responsive web pages with HTML, CSS and JavaScript.</li>
-              <li>Developing an understanding of web application flow and basic frontend–backend integration concepts.</li>
-            </ul>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="education" aria-labelledby="education-title">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="section-index">05 / Education</span>
-          <h2 class="section-title" id="education-title">Education.</h2>
-        </div>
-        <div class="education-grid">
-          <article class="education-card reveal">
-            <span class="degree">BACHELOR OF TECHNOLOGY</span>
-            <h3>Computer Engineering</h3>
-            <p>Silver Oak Institute of Technology · Ahmedabad, India</p>
-            <div class="education-meta"><span>2022 – 2026</span><span>CGPA: <strong>8.84</strong></span></div>
-          </article>
-          <article class="education-card reveal">
-            <span class="degree">HIGHER SECONDARY (HSC)</span>
-            <h3>Puna International School</h3>
-            <p>Ahmedabad, India</p>
-            <div class="education-meta"><span>2020 – 2022</span><span>77%</span></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" aria-labelledby="contact-title">
-      <div class="container">
-        <div class="contact-card reveal">
-          <div class="contact-copy">
-            <span class="section-index">06 / Contact</span>
-            <h2 id="contact-title">Let’s talk about backend engineering.</h2>
-            <p>Have a fresher or junior Python backend opportunity, a project discussion, or a technical question? Send me a message.</p>
-            <p><strong>Open to fresher / junior Python backend roles, Ahmedabad / remote / relocation.</strong></p>
-            <div class="contact-lines">
-              <a href="mailto:akshitthakkar8@gmail.com">✉ <span>akshitthakkar8@gmail.com</span></a>
-              <a href="tel:+917046640366">☎ <span>+91-7046640366</span></a>
-              <a href="https://linkedin.com/in/akshitthakkar1" target="_blank" rel="noopener noreferrer">in <span>LinkedIn profile ↗</span></a>
-              <a href="https://github.com/akshitthakkar" target="_blank" rel="noopener noreferrer">⌘ <span>GitHub profile ↗</span></a>
-            </div>
-          </div>
-
-          <form class="contact-form" id="contactForm">
-            <div class="field">
-              <label for="contactName">Your name</label>
-              <input id="contactName" name="from_name" type="text" autocomplete="name" placeholder="Name" required maxlength="100">
-            </div>
-            <div class="field">
-              <label for="contactEmail">Your email</label>
-              <input id="contactEmail" name="from_email" type="email" autocomplete="email" placeholder="you@example.com" required maxlength="160">
-            </div>
-            <div class="field">
-              <label for="contactMessage">Message</label>
-              <textarea id="contactMessage" name="message" placeholder="Write your message..." required maxlength="4000"></textarea>
-            </div>
-            <button class="button" type="submit" id="contactSubmit">Send message <span aria-hidden="true">↗</span></button>
-            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
-            <p class="contact-fallback">Email form setup is optional. <a href="mailto:akshitthakkar8@gmail.com">Email me directly</a> if the form does not open.</p>
-          </form>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container footer-inner">
-      <p>© <span id="year">2026</span> Akshit Thakkar. Built with HTML, CSS and vanilla JavaScript.</p>
-      <p><a href="#home">Back to top ↑</a></p>
     </div>
-  </footer>
+    <div class="photo"><picture><source srcset="/assets/img/profile.webp" type="image/webp"><img src="/assets/img/profile.jpg" width="440" height="550" alt="Portrait of Akshit Thakkar smiling in a maroon shirt"></picture><p class="chip c1">Python · FastAPI</p><p class="chip c2"><span class="dot" aria-hidden="true"></span>WhiteLotus Corporation</p></div>
+  </div>
+  <div class="trace"><p>What I build: here is a PDF upload travelling through my AI Document Analysis Platform.</p>
+    <ol aria-label="PDF upload request path">
+      <li style="--i:0">Client</li><li style="--i:1">Gateway<small>:8000</small></li><li style="--i:2">Document service<small>:8002</small></li><li style="--i:3">RabbitMQ queue</li><li style="--i:4">AI worker<small>:8004</small></li><li style="--i:5">FAISS index</li>
+    </ol></div>
+</div></section>
 
-  <script>
-    "use strict";
-    document.documentElement.classList.add("js");
+<section id="about"><div class="wrap about">
+  <div><div class="head"><h2>About me</h2></div>
+  <div class="prose">
+    <p>I’m a Computer Engineering graduate (B.Tech, Silver Oak Institute of Technology, 2026) who likes the parts of software users never see: APIs, service boundaries, queues and data models. I started with Python full-stack training at Qspiders in December 2025 and am now a Python Developer Intern at WhiteLotus Corporation in Ahmedabad.</p>
+    <p>Two pieces of work show where I’m focused. The AI Document Analysis Platform is a five-service FastAPI backend where people upload PDFs and chat with them through a retrieval pipeline and an LLM. Alongside it, I’m helping build an AI-agent-based product at WhiteLotus, which is still in development.</p>
+    <p>I’m looking for Python backend, FastAPI and AI application roles where I can keep building systems like these.</p>
+  </div></div>
+  <aside class="focus" aria-label="Focus areas"><h3>Where I focus</h3><ul><li>Python backends with FastAPI</li><li>REST APIs and JWT authentication</li><li>Background jobs with Celery and RabbitMQ</li><li>LLM-backed search and chat</li></ul></aside>
+</div></section>
 
-    // EmailJS setup: replace all three values after creating your EmailJS service/template.
-    // Required template variables: from_name, from_email, message, reply_to.
-    const EMAILJS_PUBLIC_KEY = "YOUR_EMAILJS_PUBLIC_KEY";
-    const EMAILJS_SERVICE_ID = "YOUR_EMAILJS_SERVICE_ID";
-    const EMAILJS_TEMPLATE_ID = "YOUR_EMAILJS_TEMPLATE_ID";
-    const CONTACT_EMAIL = "akshitthakkar8@gmail.com";
+<section id="experience"><div class="wrap">
+  <div class="head"><h2>Professional experience</h2><p>My current role and the training that led to it.</p></div>
+  <div class="timeline">
+  <article class="job">
+    <div class="job-head"><div><h3>Python Developer Intern</h3><p>WhiteLotus Corporation</p></div><p class="when">June 2026 – Present</p></div>
+    <div class="tracks">
+      <div class="track"><span class="badge">Public repository</span><h4>AI Document Analysis Platform</h4>
+        <ul><li>Designed a microservices backend with separate gateway, auth, document, chat and AI-worker services communicating over REST.</li><li>Implemented stateless JWT authentication: one service issues tokens and every other service verifies them locally.</li><li>Built PDF upload and processing APIs on PostgreSQL, with Celery and RabbitMQ running embedding jobs in the background.</li><li>Used Redis for caching, chat sessions and API rate limiting.</li><li>Worked with the search-and-chat module that retrieves relevant document chunks and generates answers with an LLM.</li></ul></div>
+      <div class="track wip"><span class="badge wip">In progress</span><h4>AI Agent Product Development</h4>
+        <ul><li>Contributing to an AI-agent-based product at WhiteLotus. It is still under development and not complete.</li><li>Work spans Python development, backend engineering and AI-powered application development.</li><li>This is company work, so no repository, demo or internal details are shared here.</li></ul></div>
+    </div>
+  </article>
+  <article class="job">
+    <div class="job-head"><div><h3>Python Fullstack Developer Intern</h3><p>Qspiders (A Software Training Institute), Ahmedabad</p></div><p class="when">From December 2025</p></div>
+    <div style="margin-top:20px"><span class="badge train">Training program</span>
+      <ul class="plain"><li>Python Full Stack training covering frontend and backend fundamentals.</li><li>Hands-on practice with Python core concepts: OOP, data types, loops and functions.</li><li>Built structured, responsive web pages with HTML, CSS and JavaScript.</li><li>Learned how web applications flow and how frontend and backend connect.</li></ul></div>
+  </article>
+</div>
+</div></section>
 
-    // Mobile navigation.
-    const menuToggle = document.getElementById("menuToggle");
-    const navLinks = document.getElementById("navLinks");
+<section id="projects"><div class="wrap">
+  <div class="head"><h2>Projects</h2><p>One in-depth case study, one product in progress, and one earlier application.</p></div>
 
-    menuToggle.addEventListener("click", () => {
-      const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
-      menuToggle.setAttribute("aria-expanded", String(!isOpen));
-      menuToggle.setAttribute("aria-label", isOpen ? "Open navigation menu" : "Close navigation menu");
-      navLinks.classList.toggle("is-open", !isOpen);
-    });
+  <article class="case" aria-labelledby="p1">
+    <span class="badge feat">Featured project</span>
+    <h3 id="p1">AI Document Analysis Platform</h3>
+    <p class="intro">A microservice platform for uploading PDFs, indexing them for retrieval-augmented generation (RAG) and chatting with them through an LLM (Gemini). The problem it addresses: letting a signed-in user ask questions and get answers drawn from their own documents.</p>
+    <ul class="tags" aria-label="Technologies"><li>Python</li><li>FastAPI</li><li>PostgreSQL</li><li>Redis</li><li>RabbitMQ</li><li>Celery</li><li>Docker Compose</li><li>JWT</li><li>FAISS</li><li>Gemini API</li><li>SQLAlchemy</li><li>Alembic</li><li>pytest</li></ul>
+    <div class="glance"><div><b>5</b><span>FastAPI services, including the gateway</span></div><div><b>7</b><span>local processes: 5 APIs, Celery worker, Celery beat</span></div><div><b>77</b><span>pytest tests across 6 suites, per the repo’s TESTING.md</span></div></div>
+    <h4 style="font:600 1.1rem 'Bricolage Grotesque',sans-serif;margin-bottom:12px">Services</h4>
+    <ul class="svc">
+      <li><strong>Gateway <code>:8000</code></strong>Public entry point, Redis rate limiting, proxies requests</li>
+      <li><strong>Auth <code>:8001</code></strong>Register, login, refresh; issues JWTs</li>
+      <li><strong>Document <code>:8002</code></strong>PDF upload, text extraction, chunking, queues the embedding job</li>
+      <li><strong>Chat <code>:8003</code></strong>RAG query: retrieval, Gemini call, Redis cache and sessions</li>
+      <li><strong>AI worker <code>:8004</code></strong>Celery worker and beat, embeddings, FAISS, internal search API</li>
+    </ul>
+    <div class="flows">
+      <div><h4>Sign in</h4><ol><li>Client registers or logs in through the gateway.</li><li>Auth service issues a JWT.</li><li>Other services verify it locally with the shared secret, with no call back to auth.</li></ol></div>
+      <div><h4>Upload a PDF</h4><ol><li>Gateway rate-limits the request and proxies it.</li><li>Document service extracts text, chunks it and stores a record in PostgreSQL.</li><li>It queues a Celery task through RabbitMQ.</li><li>The AI worker embeds the chunks and indexes them in FAISS.</li></ol></div>
+      <div><h4>Ask a question</h4><ol><li>Chat service checks Redis for a cached answer and the session.</li><li>It calls the AI worker’s internal search to retrieve relevant chunks.</li><li>It sends the chunks and question to Gemini and returns the answer.</li></ol></div>
+    </div>
+    <div class="cols">
+      <div><h4>Engineering decisions</h4><ul><li>Redis only for caching, sessions and rate limiting. RabbitMQ only as the Celery broker.</li><li>Every service-to-service HTTP call goes through one shared client with retries and a fixed timeout.</li><li>No service imports another’s code; they talk over HTTP or Celery task names.</li><li>Alembic migrations, and a route → service → repository layout that lets tests swap in fake repositories.</li></ul></div>
+      <div><h4>Quality</h4><ul><li>Unit and API tests per service, including property-based tests for the PDF chunker.</li><li>Vector search is scoped to the owning user.</li><li>Configuration such as the JWT secret and Gemini API key comes from environment variables (.env).</li></ul></div>
+    </div>
+    <p class="note"><b>Scope.</b> Docker Compose runs PostgreSQL, Redis and RabbitMQ; the services run locally as Python processes. The FAISS index is local, and there is no hosted demo. The README explains how to run everything.</p>
+    <div class="row"><a class="btn" href="https://github.com/akshitthakkar/Ai-Document-Analysis" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-gh"/></svg>View on GitHub</a></div>
+  </article>
 
-    navLinks.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("is-open");
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.setAttribute("aria-label", "Open navigation menu");
-      });
-    });
+  <div class="pair">
+    <article class="card" aria-labelledby="p2"><div class="thumb wip" aria-hidden="true"><span>Python</span><span>Backend</span><span>AI agents</span></div>
+      <div class="card-body"><span class="badge wip" style="align-self:flex-start">In progress</span><h3 id="p2">AI Agent Product</h3>
+        <p>An AI-agent-based product I’m developing at WhiteLotus Corporation as part of my internship.</p>
+        <ul class="tags"><li>Python</li><li>Backend engineering</li><li>AI applications</li></ul>
+        <details><summary>View details</summary><ul><li>Status: under active development, not completed.</li><li>My contribution: Python and backend development on an AI-powered product.</li><li>Confidential company project: no public repository, live demo or internal details are shared.</li></ul></details></div></article>
+    <article class="card" aria-labelledby="p3"><div class="thumb" aria-hidden="true"><span>Sign up</span><span>Menu</span><span>Cart</span><span>Bill</span></div>
+      <div class="card-body"><h3 id="p3">Domino’s Food Ordering System</h3>
+        <p>A Python food-ordering application: log in, pick items from a menu, build a cart and get the bill calculated automatically.</p>
+        <ul class="tags"><li>Python</li><li>SQL</li><li>SQLite</li><li>OOP</li></ul>
+        <details><summary>View details</summary><ul><li>User signup and login, with credentials stored in SQLite.</li><li>Menu management and numbered item selection.</li><li>Cart and automatic bill calculation.</li><li>Applied classes and objects, loops, dictionaries and database handling.</li></ul></details>
+        <div class="row"><a class="btn ghost" href="https://github.com/akshitthakkar/Dominos-Food-Ordering-System" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-gh"/></svg>GitHub</a></div></div></article>
+  </div>
+</div></section>
 
-    // Active section indicator.
-    const trackedSections = document.querySelectorAll("main section[id]");
-    const sectionLinks = document.querySelectorAll(".nav-links a");
-    if ("IntersectionObserver" in window) {
-      const sectionObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          sectionLinks.forEach((link) => {
-            if (link.getAttribute("href") === `#${entry.target.id}`) {
-              link.setAttribute("aria-current", "location");
-            } else {
-              link.removeAttribute("aria-current");
-            }
-          });
-        });
-      }, { rootMargin: "-28% 0px -58% 0px", threshold: 0 });
-      trackedSections.forEach((section) => sectionObserver.observe(section));
-    }
+<section id="skills"><div class="wrap">
+  <div class="head"><h2>Technical skills</h2><p>Drawn from my resume and the code in my repositories.</p></div>
+  <dl class="skills">
+    <div><dt><svg aria-hidden="true"><use href="#i-code"/></svg>Languages</dt><dd><ul class="tags"><li>Python</li><li>SQL</li><li>JavaScript</li></ul></dd></div>
+    <div><dt><svg aria-hidden="true"><use href="#i-box"/></svg>Backend development</dt><dd><ul class="tags"><li>FastAPI</li><li>REST APIs</li><li>Microservices architecture</li><li>JWT authentication</li><li>Pydantic</li><li>pytest</li></ul></dd></div>
+    <div><dt><svg aria-hidden="true"><use href="#i-db"/></svg>Databases</dt><dd><ul class="tags"><li>PostgreSQL</li><li>SQLite</li><li>SQLAlchemy</li><li>Alembic</li></ul></dd></div>
+    <div><dt><svg aria-hidden="true"><use href="#i-q"/></svg>Messaging and background jobs</dt><dd><ul class="tags"><li>Redis</li><li>RabbitMQ</li><li>Celery</li></ul></dd></div>
+    <div><dt><svg aria-hidden="true"><use href="#i-ai"/></svg>AI application development</dt><dd><ul class="tags"><li>LLM-based applications</li><li>Document search and chat (RAG)</li><li>FAISS vector search</li><li>Gemini API</li></ul></dd></div>
+    <div><dt><svg aria-hidden="true"><use href="#i-web"/></svg>Frontend</dt><dd><ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul></dd></div>
+    <div><dt><svg aria-hidden="true"><use href="#i-code"/></svg>Tools and DevOps</dt><dd><ul class="tags"><li>Git</li><li>GitHub</li><li>Docker</li><li>Docker Compose</li><li>VS Code</li></ul></dd></div>
+  </dl>
+</div></section>
 
-    // Scroll reveal, disabled for users who request reduced motion.
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const revealItems = document.querySelectorAll(".reveal");
-    if (reduceMotion || !("IntersectionObserver" in window)) {
-      revealItems.forEach((item) => item.classList.add("is-visible"));
-    } else {
-      const revealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        });
-      }, { threshold: 0.10 });
-      revealItems.forEach((item) => revealObserver.observe(item));
-    }
+<section id="education"><div class="wrap">
+  <div class="head"><h2>Education</h2></div>
+  <article class="edu"><p>Bachelor of Technology</p><h3>Computer Engineering</h3><p>Silver Oak Institute of Technology, Ahmedabad</p>
+    <div class="meta"><span>2022 – 2026</span><span>CGPA 8.84</span></div>
+    <p class="sub">Higher Secondary (HSC): Puna International School, Ahmedabad, 2020 – 2022, 77%</p></article>
+</div></section>
 
-    // Contact form: EmailJS when configured; otherwise open a pre-filled mailto draft.
-    const contactForm = document.getElementById("contactForm");
-    const formStatus = document.getElementById("formStatus");
-    const contactSubmit = document.getElementById("contactSubmit");
-    const emailJsConfigured = [EMAILJS_PUBLIC_KEY, EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID]
-      .every((value) => value && !value.startsWith("YOUR_"));
-
-    contactForm.addEventListener("submit", async (event) => {
-      event.preventDefault();
-      if (!contactForm.reportValidity()) return;
-
-      const formData = new FormData(contactForm);
-      const name = String(formData.get("from_name") || "").trim();
-      const email = String(formData.get("from_email") || "").trim();
-      const message = String(formData.get("message") || "").trim();
-      const subject = encodeURIComponent(`Portfolio enquiry from ${name}`);
-      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
-      const mailtoUrl = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
-
-      if (emailJsConfigured && window.emailjs) {
-        contactSubmit.disabled = true;
-        contactSubmit.textContent = "Sending…";
-        formStatus.textContent = "Sending your message…";
-        formStatus.dataset.state = "";
-        try {
-          window.emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
-          await window.emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
-            from_name: name,
-            from_email: email,
-            reply_to: email,
-            message
-          });
-          formStatus.textContent = "Message sent. Thank you for reaching out.";
-          formStatus.dataset.state = "success";
-          contactForm.reset();
-        } catch (error) {
-          console.error("EmailJS send failed:", error);
-          formStatus.textContent = "EmailJS could not send the message. Opening your email app instead.";
-          formStatus.dataset.state = "error";
-          window.location.href = mailtoUrl;
-        } finally {
-          contactSubmit.disabled = false;
-          contactSubmit.innerHTML = 'Send message <span aria-hidden="true">↗</span>';
-        }
-      } else {
-        formStatus.textContent = "Email form is not configured yet. Your email app will open with the message filled in.";
-        formStatus.dataset.state = "";
-        window.location.href = mailtoUrl;
-      }
-    });
-
-    // Keep the copyright year current without adding an external dependency.
-    document.getElementById("year").textContent = String(new Date().getFullYear());
-  </script>
+<section id="contact"><div class="wrap"><div class="contact">
+  <div><h2>Let’s talk</h2><p>Hiring for a Python backend, FastAPI or AI application role, or want to discuss a project? Send me a message.</p>
+    <ul>
+      <li><a href="mailto:akshitthakkar8@gmail.com"><svg aria-hidden="true"><use href="#i-mail"/></svg>akshitthakkar8@gmail.com</a></li>
+      <li><a href="https://www.linkedin.com/in/akshitthakkar1" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-in"/></svg>linkedin.com/in/akshitthakkar1</a></li>
+      <li><a href="https://github.com/akshitthakkar" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-gh"/></svg>github.com/akshitthakkar</a></li>
+      <li><span style="display:inline-flex;gap:10px;align-items:center"><svg aria-hidden="true" style="color:var(--accent)"><use href="#i-pin"/></svg>Ahmedabad, Gujarat, India</span></li>
+    </ul></div>
+  <form id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="contact">
+    <p class="hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+    <label>Your name<input name="name" type="text" autocomplete="name" required maxlength="100"></label>
+    <label>Your email<input name="email" type="email" autocomplete="email" required maxlength="160"></label>
+    <label>Message<textarea name="message" required maxlength="4000"></textarea></label>
+    <button class="btn" id="send" type="submit">Send message</button>
+    <p id="status" role="status" aria-live="polite"></p>
+  </form>
+</div></div></section>
+</main>
+<footer><div class="wrap"><p>© <span id="year">2026</span> Akshit Thakkar</p><p><a href="#home">Back to top</a></p></div></footer>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>
