@@ -105,7 +105,7 @@ footer{padding:28px 0 40px;border-top:1px solid var(--line);color:var(--muted);f
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 
 /* v2 polish */
-body{background:var(--bg) radial-gradient(900px 500px at 85% -5%,color-mix(in srgb,var(--accent) 18%,transparent),transparent 70%),radial-gradient(700px 400px at -5% 30%,color-mix(in srgb,var(--accent) 9%,transparent),transparent 70%) no-repeat}
+body{background-color:var(--bg);background-image:radial-gradient(900px 500px at 85% -5%,color-mix(in srgb,var(--accent) 18%,transparent),transparent 70%),radial-gradient(700px 400px at -5% 30%,color-mix(in srgb,var(--accent) 9%,transparent),transparent 70%);background-repeat:no-repeat}
 .hero{position:relative}.hero::before{content:"";position:absolute;inset:0;z-index:-1;background-image:radial-gradient(color-mix(in srgb,var(--ink) 14%,transparent) 1px,transparent 1.2px);background-size:24px 24px;-webkit-mask-image:linear-gradient(#000 55%,transparent);mask-image:linear-gradient(#000 55%,transparent)}
 .hero h1{background:linear-gradient(120deg,var(--ink) 55%,var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
 .btn:not(.ghost){box-shadow:0 8px 22px -8px var(--accent)}
